@@ -4,10 +4,15 @@ import com.test.tictactoe.model.GameValidation
 import org.springframework.stereotype.Service
 import java.util.*
 
-@Service
-class CheckResultService {
+interface ICheckResultService {
+    fun mapGameToIntArray(gameValidation : GameValidation) : Array<Int?>
+    fun isVelha(jogo : Array<Int?>) : Boolean
+}
 
-    fun mapGameToIntArray(gameValidation : GameValidation) : Array<Int?> {
+@Service
+class CheckResultService : ICheckResultService {
+
+    override fun mapGameToIntArray(gameValidation : GameValidation) : Array<Int?> {
         val board = Array<Int?>(9) {null}
         var j = 0
 
@@ -35,7 +40,7 @@ class CheckResultService {
         return board
     }
 
-    fun isVelha(jogo : Array<Int?>) : Boolean {
+    override fun isVelha(jogo : Array<Int?>) : Boolean {
 
         if (jogo.size != 9) {
             throw IllegalArgumentException("A game must be a array with 9 positions.")

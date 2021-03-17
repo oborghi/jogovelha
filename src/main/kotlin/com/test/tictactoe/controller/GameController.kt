@@ -1,7 +1,7 @@
 package com.test.tictactoe.controller
 
 import com.test.tictactoe.model.GameValidation
-import com.test.tictactoe.service.CheckResultService
+import com.test.tictactoe.service.ICheckResultService
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.media.Content
 import io.swagger.v3.oas.annotations.responses.ApiResponse
@@ -15,7 +15,7 @@ import javax.validation.Valid
 
 @RestController
 @RequestMapping(GameController.PATH)
-class GameController @Autowired constructor(private val checkResultService: CheckResultService) {
+class GameController @Autowired constructor(private val checkResultService: ICheckResultService) {
 
     companion object {
         const val PATH = "/jogovelha"

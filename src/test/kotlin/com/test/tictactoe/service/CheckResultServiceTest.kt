@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-internal class CheckResultServiceTest @Autowired constructor(private val checkResultService: CheckResultService) {
+internal class CheckResultServiceTest @Autowired constructor(private val checkResultService: ICheckResultService) {
 
     @Test
     fun mapGameToIntArray() {

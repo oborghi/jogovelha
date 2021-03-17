@@ -4,11 +4,6 @@ import com.test.tictactoe.model.GameValidation
 import org.springframework.stereotype.Service
 import java.util.*
 
-interface ICheckResultService {
-    fun mapGameToIntArray(gameValidation : GameValidation) : Array<Int?>
-    fun isVelha(jogo : Array<Int?>) : Boolean
-}
-
 @Service
 class CheckResultService : ICheckResultService {
 
